@@ -29,15 +29,6 @@ ngrok http 8000
 
 Copy the HTTPS forwarding URL ngrok prints (e.g. `https://abc123.ngrok.io`).
 
-## Register with Opal (once you have access)
-
-1. Go to Opal → Tools Registry → "Add Tool Registry"
-2. Registry URL: `<your-ngrok-url>/discovery`
-3. Name: "Churn Predictor - Cart Abandonment Tool"
-4. Save, then confirm `get_cart_abandonment_data` shows up as a discovered tool
-5. Test it directly from Opal Chat by asking something like
-   "get recent cart abandonment data for the last 7 days"
-
 ## Tool parameters
 
 | Param | Type | Default | Notes |
@@ -45,13 +36,3 @@ Copy the HTTPS forwarding URL ngrok prints (e.g. `https://abc123.ngrok.io`).
 | `lookback_days` | int | 7       | how far back to pull abandonment events |
 | `min_cart_value` | float (optional) | none    | filter out low-value carts |
 | `limit` | int | 20      | max records returned |
-
-## Notes for the write-up
-
-- This mocks the data layer (as the test explicitly allows) but is
-  structured exactly as a real ODP or e-commerce platform query would
-  return it, so swapping in a real API later is a drop-in replacement,
-  not a redesign.
-- `summary` block is included alongside `records` specifically so the
-  Risk Analyst agent doesn't have to do aggregate math itself before
-  reasoning about the segment.
