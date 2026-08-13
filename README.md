@@ -41,10 +41,10 @@ Copy the HTTPS forwarding URL ngrok prints (e.g. `https://abc123.ngrok.io`).
 ## Tool parameters
 
 | Param | Type | Default | Notes |
-|---|---|---|---|
-| `lookback_days` | int | 14 | how far back to pull abandonment events |
-| `min_cart_value` | float (optional) | none | filter out low-value carts |
-| `limit` | int | 20 | max records returned |
+|---|---|---------|---|
+| `lookback_days` | int | 7       | how far back to pull abandonment events |
+| `min_cart_value` | float (optional) | none    | filter out low-value carts |
+| `limit` | int | 20      | max records returned |
 
 ## Notes for the write-up
 
