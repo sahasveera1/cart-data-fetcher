@@ -29,6 +29,20 @@ ngrok http 8000
 
 Copy the HTTPS forwarding URL ngrok prints (e.g. `https://abc123.ngrok.io`).
 
+## Deploy on Vercel
+
+This repo keeps `main:app` for local `uvicorn` runs and exposes the same FastAPI
+app to Vercel through `api/index.py` plus `vercel.json`.
+
+Deploy with:
+
+```bash
+vercel
+```
+
+Vercel will route all requests to the FastAPI app, so the same endpoints used
+locally are available in production.
+
 ## Tool parameters
 
 | Param | Type | Default | Notes |
