@@ -1,0 +1,3 @@
+optimizely-opal.opal-tools-sdk
+fastapi
+uvicorn
